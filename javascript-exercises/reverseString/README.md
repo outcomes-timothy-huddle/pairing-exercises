@@ -1,0 +1,2 @@
+- run "bower install"
+- open index.html in a browser.  if using intelliJ IDEA, you can go to http://localhost:63342/javascript-exercises/reverseString/index.html

@@ -1,0 +1,59 @@
+import { moduleForComponent, test } from 'ember-qunit';
+
+moduleForComponent('reverse-string-solution', 'components/reverse-string-solution-test.js', {
+});
+
+test('reverse empty string build-in solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringBuiltInSolution(''), '');
+});
+
+test('reverse short string built-in solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringBuiltInSolution('a'), 'a');
+});
+
+test('reverse simple string built-in solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringBuiltInSolution('abc 123'), '321 cba');
+});
+
+test('reverse empty string for loop solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringForLoopSolution(''), '');
+});
+
+test('reverse short string for loop solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringForLoopSolution('a'), 'a');
+});
+
+test('reverse simple string for loop solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringForLoopSolution('abc 123'), '321 cba');
+});
+
+test('reverse empty string recursive solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringRecursiveSolution(''), '');
+});
+
+test('reverse short string recursive solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringRecursiveSolution('a'), 'a');
+});
+
+test('reverse simple string recursive solution', function () {
+    var component = this.subject();
+
+    equal(component.reverseStringRecursiveSolution('abc 123'), '321 cba');
+});
+

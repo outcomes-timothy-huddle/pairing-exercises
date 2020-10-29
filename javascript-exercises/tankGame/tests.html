@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="js/ext/jasmine/jasmine.css">
+    <script type="text/javascript" src="js/ext/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="js/ext/jasmine/jasmine-html.js"></script>
+    <script type="text/javascript" src="js/ext/jasmine/boot.js"></script>
+
+    <script src="js/ext/phaser/phaser.min.js"></script>
+
+    <script src="js/resources.js"></script>
+    <script src="js/miniMap.js"></script>
+    <script src="js/tank.js"></script>
+    <script src="js/enemyTank.js"></script>
+    <script src="js/playerTank.js"></script>
+    <script src="js/tankGame.js"></script>
+
+    <script>
+        // create our game, and tie into the "created" hook of the init function
+        var ourGame = new TankGame();
+        var created = false;
+        var game = ourGame.init(null, function() {
+            created = true;
+        });
+
+        // utility function to call "done" when the game is created
+        function ensureGameIsCreated(done) {
+            if(created) {
+                done();
+            } else {
+                setTimeout(function() {
+                    ensureGameIsCreated(done);
+                }, 300);
+            }
+        }
+
+        // tests
+        describe("Tank Game", function() {
+
+            beforeEach(function(done) {
+                ensureGameIsCreated(done);
+            });
+
+            describe("Game", function() {
+                it("should have initialized", function() {
+                    expect(game).not.toBe(null);
+                    expect(game.world).not.toBe(null);
+                });
+            });
+
+            describe("EnemyTanks", function() {
+                it("should have a name that reflects their index in the enemy tanks array", function(done) {
+                    var enemyTank = new EnemyTank(0, ourGame, ourGame.enemyBullets);
+
+                    expect(enemyTank.tank.name).toBe("0");
+
+                    done();
+                });
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

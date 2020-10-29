@@ -1,0 +1,29 @@
+html, body {
+    font-family: Helvetica;
+    margin: 20px;
+    color: #333333;
+}
+
+.palindromeDisplay {
+    border: 1px solid #dddddd;
+    background-color: #efefef;
+    padding: 20px;
+    margin: 10px 0;
+    width: 400px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    line-height: 2rem;
+}
+
+.palindromeDisplay .positive {
+    color: #009900;
+}
+
+.palindromeDisplay .negative {
+    color: #990000;
+}
+
+h3 {
+    margin: 0px;
+    font-size: 1.25rem;
+}

@@ -1,0 +1,15 @@
+html, body {
+    font-family: Helvetica;
+    margin: 20px;
+    color: #333333;
+}
+
+.fibonacciDisplay {
+    border: 1px solid #dddddd;
+    background-color: #efefef;
+    padding: 20px;
+    margin: 10px 0;
+    width: 400px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+}

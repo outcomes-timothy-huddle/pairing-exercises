@@ -1,0 +1,38 @@
+td,th{
+color: #353535;
+cursor: default;
+margin: auto;
+border-spacing: 2px;
+border-color: grey;
+padding: 17px;
+font-size: 14px;
+}
+
+tr {
+    border: 1px solid #dcdcdc
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.condition {
+    text-align: center;
+}
+
+.directions-for-use {
+    text-align: center;
+}
+
+.prescriber-name {
+    text-align: right;
+}
+
+.medication-name {
+    font-weight:700;
+}
+
+.medication-header {
+    border-bottom: 3px solid #dcdcdc;
+}

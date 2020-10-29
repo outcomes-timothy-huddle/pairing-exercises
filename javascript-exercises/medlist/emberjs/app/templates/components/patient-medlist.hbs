@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Directions for Use</th>
+      <th>Condition</th>
+      <th>Prescriber</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each medications as |medication|}}
+      <tr class="medication">
+        <td>{{medication.name}}</td>
+        <td>{{uppercase medication.directionsForUse}}</td>
+        <td>{{uppercase medication.condition}}</td>
+        <td>{{uppercase medication.prescriber.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

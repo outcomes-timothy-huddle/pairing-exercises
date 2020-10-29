@@ -1,0 +1,15 @@
+.Patient-Header {
+  background-color: lightgray;
+  padding: 5px;
+}
+
+.Patient-Header h1 {
+  margin: 25px auto 0;
+  font-size: 30px;
+}
+
+.Patient-Header span {
+  padding:20px;
+  font-style: italic;
+  font-size: 13px;
+}

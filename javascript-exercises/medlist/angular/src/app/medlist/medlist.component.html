@@ -1,0 +1,16 @@
+
+<table>
+    <tr class="medication-header">
+        <th>Name</th>
+        <th>Directions for Use</th>
+        <th>Condition</th>
+        <th>Prescriber</th>
+    </tr>
+    <tr class="medication-row" *ngFor="let medication of medications">
+           <td class="medication-name">{{medication.name.toUpperCase()}}</td>
+           <td class="directions-for-use">{{medication.directionsForUse.toUpperCase()}}</td>
+           <td class="condition">{{medication.condition.toUpperCase()}}</td>
+           <td class="prescriber-name">{{medication.prescriber.name.toUpperCase()}}</td>
+    </tr>
+
+</table>

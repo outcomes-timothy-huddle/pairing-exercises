@@ -1,0 +1,99 @@
+import { moduleForComponent, test } from 'ember-qunit';
+
+moduleForComponent('palindrome-check-solution', 'components/palindrome-check-solution-test.js', {
+});
+
+test('it renders', function () {
+    expect(2);
+
+    // creates the component instance
+    var component = this.subject();
+    equal(component._state, 'preRender');
+
+    // appends the component to the page
+    this.append();
+    equal(component._state, 'inDOM');
+});
+
+test('test preparePhraseForPalindromeCheck for null input', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.preparePhraseForPalindromeCheck(null);
+    equal(result, null, 'null input yields null output');
+});
+
+test('test preparePhraseForPalindromeCheck for mixed case input', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.preparePhraseForPalindromeCheck('MIXED case INPUT');
+    equal(result, 'mixedcaseinput', 'mixed case input yields lower case result');
+});
+
+test('test removeNonAlphaNumericCharacters for null input', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.removeNonAlphaNumericCharacters();
+    equal(result, null, 'null input yields null output');
+});
+
+test('test removeNonAlphaNumericCharacters for valid input', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.removeNonAlphaNumericCharacters('hello');
+    equal(result, 'hello', 'no characters removed if those passed in are alphanumeric');
+});
+
+test('test removeNonAlphaNumericCharacters for input containing all manner of non-alphanumeric characters', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.removeNonAlphaNumericCharacters(' hello world 1234567890 !@#$%^&*() []\\;\',./{}|:"<>?"');
+    equal(result, 'helloworld1234567890', 'no characters removed if those passed in are alphanumeric');
+});
+
+test('test isPalindromeCheckRecursiveImpl', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.isPalindromeCheckRecursiveImpl('abcba');
+    equal(result, true, 'valid palindrome check succeeds');
+
+    result = component.isPalindromeCheckRecursiveImpl('abc');
+    equal(result, false, 'invalid palindrome check fails.');
+
+    result = component.isPalindromeCheckRecursiveImpl('a');
+    equal(result, true, 'valid single character palindrome check succeeds.');
+});
+
+test('test isPalindromeCheckReverseImpl', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.isPalindromeCheckRecursiveImpl('abcba');
+    equal(result, true, 'valid palindrome check succeeds');
+
+    result = component.isPalindromeCheckRecursiveImpl('abc');
+    equal(result, false, 'invalid palindrome check fails.');
+
+    result = component.isPalindromeCheckRecursiveImpl('a');
+    equal(result, true, 'valid single character palindrome check succeeds.');
+});
+
+
+test('test isPalindromeCheckLoopImpl', function () {
+    var component = this.subject();
+    this.append();
+
+    var result = component.isPalindromeCheckLoopImpl('abcba');
+    equal(result, true, 'valid palindrome check succeeds');
+
+    result = component.isPalindromeCheckLoopImpl('abc');
+    equal(result, false, 'invalid palindrome check fails.');
+
+    result = component.isPalindromeCheckLoopImpl('a');
+    equal(result, true, 'valid single character palindrome check succeeds.');
+});

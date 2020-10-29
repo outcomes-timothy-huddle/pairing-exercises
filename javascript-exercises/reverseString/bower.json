@@ -1,0 +1,7 @@
+{
+  "name": "reverse",
+  "description": "plain js test using jasmine",
+  "dependencies": {
+    "jasmine": "*"
+  }
+}

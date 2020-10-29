@@ -1,0 +1,78 @@
+@import "header.css";
+@import "patientheader.css";
+@import "patientmedlist.css";
+
+.App {
+  text-align: center;
+}
+
+body{
+  font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
+  color: #5a5a5a;
+  margin:0;
+}
+
+table td {
+  transition: all .5s;
+  white-space: nowrap;
+}
+.table-wrapper {
+  overflow: auto;
+}
+.description {
+  font-style: italic;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 573px;
+  cursor: default;
+  margin: auto;
+  width: 70%;
+}
+
+table th,
+table td {
+  padding: 17px 17px;
+}
+table caption {
+  margin: 7px;
+}
+
+/* Table Header */
+table thead th {
+  border-bottom: 2px solid #CCCCCC;
+}
+
+/* Table Body */
+table tbody td {
+  color: #353535;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+table tbody td:first-child{
+  text-align: left;
+  font-weight: bold;
+}
+
+table tbody td:nth-child(4),
+table tbody td:last-child {
+  text-align: right;
+}
+
+table tbody tr:last-child td {
+  border: 0;
+}
+
+table tbody tr:hover td {
+  background-color: #f7f7f7;
+  transition: all .2s;
+}
+
+/* Table Footer */
+table tfoot th {
+  border-top: 1px solid #c7c7c7;
+  text-align: right;
+}
