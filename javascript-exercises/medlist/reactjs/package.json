@@ -12,7 +12,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "docker-start" : "docker stop mock-rest-backend || true && docker rm mock-rest-backend || true && docker build ../mock-rest-backend -t mock-rest-backend:latest && docker run --name mock-rest-backend -d -p 8000:8000 mock-rest-backend:latest",
+    "docker-start": "docker stop mock-rest-backend || true && docker rm mock-rest-backend || true && docker build ../mock-rest-backend -t mock-rest-backend:latest && docker run --name mock-rest-backend -d -p 8000:8000 mock-rest-backend:latest",
     "start": "npm run docker-start && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
