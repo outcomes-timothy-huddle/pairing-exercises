@@ -29,7 +29,7 @@ $ npm install -g bower
 $ npm install -g phantomjs
 $ npm install
 $ bower install
-$ ember serve
+$ npm start
 ```
 
 The Palindrome ember application is now running. Navigate to http://localhost:4200 to view a page showing results of a sample palindrome function. Navigate to http://localhost:4200/tests to view tests.
