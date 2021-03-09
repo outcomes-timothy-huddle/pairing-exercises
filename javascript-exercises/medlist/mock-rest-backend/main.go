@@ -138,8 +138,6 @@ func main() {
 	medications = append(medications, Medication{ID: uuid.NewV4().String(), Name: "TOPIRAMATE TAB 200MG", DirectionsForUse: "SWALLOW PILL ONCE IT IS IN YOUR MOUTH.", Condition: "ARTHRITIS", Prescriber: &Prescriber{ID: uuid.NewV4().String(), Name: "Jack Jones"}})
 	medications = append(medications, Medication{ID: uuid.NewV4().String(), Name: "TRADJENTA TAB 5MG", DirectionsForUse: "SWALLOW PILL ONCE IT IS IN YOUR MOUTH.", Condition: "ARTHRITIS", Prescriber: &Prescriber{ID: uuid.NewV4().String(), Name: "Dr. Phil"}})
 
-	corsObj := handlers.AllowedOrigins([]string{"*"})
-
 	router.HandleFunc("/medications", GetMedicationsEndpoint).Methods("GET")
 	router.HandleFunc("/medications", CreateMedication).Methods("POST")
 	router.HandleFunc("/medications/search", SearchForMedicationsEndpoint).Methods("GET")
@@ -147,7 +145,10 @@ func main() {
 
 	port := getPort()
 	log.Println("Starting server on port " + port)
-	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(corsObj)(router)))
+	log.Fatal(http.ListenAndServe(":"+port, handlers.CORS(
+		handlers.AllowedOrigins([]string{"*"}),
+		handlers.AllowedMethods([]string{"OPTIONS", "DELETE", "GET", "POST"}),
+	)(router)))
 }
 
 func getPort() string {
