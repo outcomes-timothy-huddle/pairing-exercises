@@ -7,7 +7,7 @@ To run locally with Docker
 2. docker run -p 8000:8000 mock-rest-backend:latest
 
 To run locally and do development on
-1. Install Go 1.9 or greater (https://golang.org/dl/)
+1. Install Go 1.13 or greater (https://golang.org/dl/)
 2. Install dep (https://github.com/golang/dep) (optional but necessary if modifying project dependencies) 
 2. Execute `go run main.go`
 
