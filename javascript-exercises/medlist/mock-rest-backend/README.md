@@ -15,6 +15,15 @@ Server will start on port 8000.
 
 To deploy to cloud foundry you simply just need to do a `cf push`
 
+## Cross-compilation
+
+`GOOS=linux GOARCH=amd64 go build -o mockBackend-linux -ldflags "-s -w" main.go`
+
+`GOOS=darwin GOARCH=amd64 go build  -o mockBackend-osx -ldflags "-s -w" main.go`
+
+`GOOS=windows GOARCH=amd64 go build  -o mockBackend.exe -ldflags "-s -w" main.go`
+
+
 # Endpoints
 
 ## Get all medications
