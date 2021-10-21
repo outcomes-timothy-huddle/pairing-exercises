@@ -13,4 +13,5 @@
 
 ## Setup
 
+0. Ensure Java and Node work on your machine (java --version / node -v).
 1. Team will instruct you on the exercises you will work on together. Unlike traditional pairing, you will drive the whole time. The team member you are pairing with will be there to answer questions and assist. Feel free to google or do whatever needed to work through the problem. Treat it as closely as you would day in day out work.
