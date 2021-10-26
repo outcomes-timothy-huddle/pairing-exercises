@@ -11,7 +11,7 @@ export default class PatientMedList extends Component {
   }
 
   componentDidMount () {
-    axios.get('http://localhost:8008/medications')
+    axios.get('http://localhost:8000/medications')
       .then(r => this.setState({ medications: r.data, loading: false }))
       .catch(e => console.log(e))
   }
